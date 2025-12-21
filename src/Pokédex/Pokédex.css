@@ -13,6 +13,8 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    margin: 0px;
+    padding: 0px;
 }
 
 .container a {
@@ -21,8 +23,6 @@
 }
 
 .container img {
-    filter:
-        drop-shadow(2px 0 rgb(255, 255, 255)) drop-shadow(-2px 0 rgb(255, 255, 255)) drop-shadow(0 2px rgb(255, 255, 255)) drop-shadow(0 -2px rgb(255, 255, 255));
     width: 700px;
     margin-right: 5px;
 }
@@ -90,6 +90,8 @@
 
     .container img {
         width: 500px;
+        margin-right: 0px;
+        margin-bottom: 5px;
     }
 }
 
