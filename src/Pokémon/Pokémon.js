@@ -33,16 +33,16 @@ function Pokémon() {
                 <img className='media' src={pokémon.image} alt={pokémon.name} />
                 <audio src={pokémon.cry} autoPlay controls />
             </div>
-            <div className="text">
+            <div className="info">
                 <h1>{pokémon.name.toUpperCase()}</h1>
                 <p>{pokémon.description}</p>
                 <ul>
                     <li>Height<br />
-                        <span className="infoBody">{`${pokémon.height} m`}</span>
+                        <span className="aspect">{`${pokémon.height} m`}</span>
                     </li>
 
                     <li>Weight<br />
-                        <span className="infoBody">{`${pokémon.weight} kgs`}</span>
+                        <span className="aspect">{`${pokémon.weight} kgs`}</span>
                     </li>
 
                     <li>Types<br />
@@ -56,7 +56,7 @@ function Pokémon() {
                     <li>Stats<br />
                         <ul className='statList'>
                             {pokémon.stats.map((stat) => (
-                                <li className="infoBody" key={stat}>
+                                <li className="aspect" key={stat}>
                                     {stat.stat.name.toUpperCase().replace(/-/g, " ")}:
                                     <span> {stat.base_stat}</span>
                                 </li>

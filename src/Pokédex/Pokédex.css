@@ -7,63 +7,107 @@
     text-align: center;
 }
 
-.results a {
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px white;
+}
+
+.container a {
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
 
-.results img {
-  filter:
-    drop-shadow(2px 0 rgb(255, 255, 255))
-    drop-shadow(-2px 0 rgb(255, 255, 255))
-    drop-shadow(0 2px rgb(255, 255, 255))
-    drop-shadow(0 -2px rgb(255, 255, 255));
-    height: 700px;
+.container img {
+    filter:
+        drop-shadow(2px 0 rgb(255, 255, 255)) drop-shadow(-2px 0 rgb(255, 255, 255)) drop-shadow(0 2px rgb(255, 255, 255)) drop-shadow(0 -2px rgb(255, 255, 255));
     width: 700px;
-    margin-left: 0;
-    margin: 0px;
+    border: solid 1px white;
+    margin-right: 5px;
 }
 
 .text {
-    padding: 25px;
+    color: rgb(255, 255, 255);
+    padding: 0x;
+    margin-left: 5px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: solid 1px white;
 }
 
-.results h1 {
-    color: rgb(255, 255, 255);
+.text h1 {
     font-weight: 500;
     font-size: 150px;
-    padding: 0px;
-    margin: 0px;
     line-height: 150px;
-}
-
-.results h2 {
-    color: rgb(0, 0, 0);
-    font-weight: 500;
-    font-size: 100px;
     padding: 0px;
     margin: 0px;
-    line-height: 100px;
-    -webkit-text-stroke: 2px rgb(255, 0, 0)
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.text h2 {
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: 1px rgb(255, 0, 0);
+    padding: 0px;
+    padding-left: 5px;
+    margin: 0px;
+    font-size: 100px;
+    line-height: 100px;
 }
 
 .snap-container {
-  height: 100vh;               /* full screen */
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+    height: 100vh;
+    /* full screen */
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
-.snap-container > div {
-  scroll-snap-align: start;
-  height: 100vh;               /* each Pokémon takes full screen */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.snap-container>div {
+    scroll-snap-align: start;
+    height: 100vh;
+    /* each Pokémon takes full screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .text {
+        margin-left: 0px;
+        margin-top: 5px;
+    }
+
+    .text h1 {
+        font-size: 100px;
+        line-height: 100px;
+    }
+
+    .text h2 {
+        font-size: 75px;
+        line-height: 75px;
+    }
+
+    .container img {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .text h1 {
+        font-size: 75px;
+        line-height: 75px;
+    }
+
+    .text h2 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .container img {
+        width: 450px;
+    }
 }

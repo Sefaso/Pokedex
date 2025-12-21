@@ -43,26 +43,29 @@ p {
     width: 500px;
 }
 
-.text {
+.info {
     color: white;
     margin-left: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.text h1 {
+.info h1 {
     text-align: left;
     font-weight: 500;
     font-size: 150px;
     line-height: 150px;
     margin: 0px;
+    padding: 0px;
 }
 
-.text p {
+.info p {
     text-align: left;
     font-size: 40px;
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
     margin: 0px;
-    margin-top: 25px
+    padding: 20px 0px;
+    border-bottom: solid 5px white;
 }
 
 ul {
@@ -72,7 +75,7 @@ ul {
     margin: 0px;
     padding: 0px;
     font-size: 35px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .statList {
@@ -87,7 +90,7 @@ li {
     margin-right: 50px;
 }
 
-.infoBody {
+.aspect {
     font-size: 30px;
     line-height: 60px;
     font-family: 'Courier New', Courier, monospace;
