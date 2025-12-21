@@ -7,7 +7,7 @@
     text-align: center;
 }
 
-p {
+.info p {
     color: white;
 }
 
@@ -17,12 +17,8 @@ p {
     align-items: center;
     width: 90%;
     margin: 0px auto 0px auto;
-    padding: 75px 10px 10px 10px;
-}
-
-.pokémon h1 {
-    font-size: 100px;
-    color: hsl(0, 0%, 90%);
+    padding: 75px 00px 0px 0px;
+    border: solid 1px white;
 }
 
 .media {
@@ -36,7 +32,10 @@ p {
     max-height: 500px;
     margin-bottom: 25px;
     filter:
-        drop-shadow(2px 0 rgb(255, 255, 255)) drop-shadow(-2px 0 rgb(255, 255, 255)) drop-shadow(0 2px rgb(255, 255, 255)) drop-shadow(0 -2px rgb(255, 255, 255));
+        drop-shadow(2px 0 rgb(255, 255, 255)) 
+        drop-shadow(-2px 0 rgb(255, 255, 255)) 
+        drop-shadow(0 2px rgb(255, 255, 255)) 
+        drop-shadow(0 -2px rgb(255, 255, 255));
 }
 
 .media audio {
@@ -68,7 +67,7 @@ p {
     border-bottom: solid 5px white;
 }
 
-ul {
+.info ul {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -78,7 +77,7 @@ ul {
     margin-top: 20px;
 }
 
-.statList {
+.info .statList {
     display: flex;
     flex-direction: column;
     margin: 0px;
@@ -86,7 +85,7 @@ ul {
     line-height: 60px;
 }
 
-li {
+.info li {
     margin-right: 50px;
 }
 
@@ -107,7 +106,7 @@ li {
     font-weight: 600;
 }
 
-/* Types' color presets */
+/* #region Types' color presets */
 
 .normal {
     background-color: #a8a77a;
@@ -180,6 +179,7 @@ li {
 .fairy {
     background-color: #d685ad;
 }
+/* #endregion */
 
 @media only screen and (max-width: 1000px) {
 
