@@ -13,7 +13,6 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    border: solid 1px white;
 }
 
 .container a {
@@ -25,7 +24,6 @@
     filter:
         drop-shadow(2px 0 rgb(255, 255, 255)) drop-shadow(-2px 0 rgb(255, 255, 255)) drop-shadow(0 2px rgb(255, 255, 255)) drop-shadow(0 -2px rgb(255, 255, 255));
     width: 700px;
-    border: solid 1px white;
     margin-right: 5px;
 }
 
@@ -34,7 +32,6 @@
     padding: 0x;
     margin-left: 5px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    border: solid 1px white;
 }
 
 .text h1 {
