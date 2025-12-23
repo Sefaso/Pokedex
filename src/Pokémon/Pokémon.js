@@ -42,7 +42,7 @@ function Pokémon() {
                     </li>
 
                     <li>Weight<br />
-                        <span className="aspect">{`${pokémon.weight} kgs`}</span>
+                        <span className="aspect">{`${pokémon.weight} Kgs`}</span>
                     </li>
 
                     <li>Types<br />
