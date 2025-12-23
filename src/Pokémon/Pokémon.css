@@ -191,13 +191,13 @@
     }
 
     .media img {
-        max-width: 450px;
-        max-height: 450px;
+        max-width: 400px;
+        max-height: 400px;
         margin-bottom: 10px;
     }
 
     .media audio {
-        width: 450px;
+        width: 400px;
         margin-bottom: 10px;
     }
 
