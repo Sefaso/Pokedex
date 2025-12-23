@@ -191,13 +191,13 @@
     }
 
     .media img {
-        max-width: 400px;
-        max-height: 400px;
+        max-width: 350px;
+        max-height: 350px;
         margin-bottom: 10px;
     }
 
     .media audio {
-        width: 400px;
+        width: 350px;
         margin-bottom: 10px;
     }
 
@@ -208,13 +208,13 @@
 
     .info h1 {
         text-align: center;
-        font-size: 75px;
-        line-height: 75px;
+        font-size: 50px;
+        line-height: 50px;
     }
 
     .info p {
         text-align: center;
-        font-size: 25px;
+        font-size: 15px;
         padding: 20px 0px;
         border-bottom: solid 2.5px white;
     }
@@ -222,9 +222,9 @@
     .info ul {
         flex-direction: column;
         text-align: center;
-        font-size: 40px;
-        line-height: 40px;
-        margin: 10px 0px;
+        font-size: 30px;
+        line-height: 30px;
+        margin-top: 10px;
         justify-content: space-between;
     }
 
@@ -233,11 +233,12 @@
     }
 
     .aspect {
-        font-size: 30px;
-        line-height: 30px;
+        font-size: 15px;
+        line-height: 15px;
     }
 
     .typeBubble {
+        font-size: 15px;
         margin: 0px 2.5px;
     }
 }
