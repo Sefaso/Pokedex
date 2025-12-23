@@ -22,7 +22,7 @@
     width: 95%;
     margin: 75px auto 0px auto;
     padding-top: 10px;
-    /* border: solid 1px white; */
+    border: solid 1px white;
 }
 
 .media {
@@ -39,6 +39,7 @@
         drop-shadow(-2px 0 rgb(255, 255, 255))
         drop-shadow(0 2px rgb(255, 255, 255))
         drop-shadow(0 -2px rgb(255, 255, 255));
+    border: solid 1px white;
 }
 
 .media audio {
