@@ -35,10 +35,7 @@
     max-height: 500px;
     margin-bottom: 25px;
     filter:
-        drop-shadow(2px 0 rgb(255, 255, 255))
-        drop-shadow(-2px 0 rgb(255, 255, 255))
-        drop-shadow(0 2px rgb(255, 255, 255))
-        drop-shadow(0 -2px rgb(255, 255, 255));
+        drop-shadow(2px 0 rgb(255, 255, 255)) drop-shadow(-2px 0 rgb(255, 255, 255)) drop-shadow(0 2px rgb(255, 255, 255)) drop-shadow(0 -2px rgb(255, 255, 255));
     border: solid 1px white;
 }
 
@@ -77,21 +74,18 @@
     list-style: none;
     margin: 0px;
     padding: 0px;
-    font-size: 35px;
     margin-top: 20px;
     justify-content: space-between;
 }
 
-.info .statList {
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-    padding: 0px;
+.info .statCategory {
+    font-size: 35px;
 }
 
 .aspect {
     font-size: 30px;
-    line-height: 50px;
+    line-height: 30px;
+    margin-bottom: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
 }
@@ -104,6 +98,13 @@
     margin-right: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
+}
+
+.info .statList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 0px;
 }
 
 /* #region Types' color presets */
@@ -186,6 +187,7 @@
 
 @media only screen and (max-width: 800px) {
     .pokémon {
+        padding: 0px;
         flex-direction: column;
         align-items: center;
     }
@@ -198,12 +200,11 @@
 
     .media audio {
         width: 350px;
-        margin-bottom: 10px;
     }
 
     .info {
         margin-left: 0px;
-        margin-top: 15px;
+        margin-top: 20px;
     }
 
     .info h1 {
@@ -215,30 +216,46 @@
     .info p {
         text-align: center;
         font-size: 15px;
-        padding: 20px 0px;
+        padding-top: 5px;
+        padding-bottom: 10px;
         border-bottom: solid 2.5px white;
     }
 
     .info ul {
         flex-direction: column;
         text-align: center;
-        font-size: 30px;
-        line-height: 30px;
-        margin-top: 10px;
-        justify-content: space-between;
+        font-size: 20px;
+        line-height: 20px;
+        margin-top: 5px;
     }
 
-    .info li {
-        margin: 10px 0px;
+    .info .statCategory {
+        font-size: 20px;
+        line-height: 20px;
     }
 
     .aspect {
         font-size: 15px;
         line-height: 15px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .info li {
+        font-size: 15px;
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
 
     .typeBubble {
         font-size: 15px;
-        margin: 0px 2.5px;
+        line-height: 30px;
+        margin-top: 10px;
+    }
+
+    .info .statList {
+        display: flex;
+        flex-direction: row;
+        margin: 0px;
     }
 }

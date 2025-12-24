@@ -37,15 +37,15 @@ function Pokémon() {
                 <h1>{pokémon.name.toUpperCase()}</h1>
                 <p>{pokémon.description}</p>
                 <ul>
-                    <li>Height<br />
+                    <li className="statCategory">Height<br />
                         <span className="aspect">{`${pokémon.height} m`}</span>
                     </li>
 
-                    <li>Weight<br />
+                    <li className="statCategory">Weight<br />
                         <span className="aspect">{`${pokémon.weight} Kgs`}</span>
                     </li>
 
-                    <li>Types<br />
+                    <li className="statCategory">Types<br />
                         {pokémon.types.map(type => (
                             <span key={type} className={`typeBubble ${type}`}>
                                 {type.toUpperCase()}
@@ -53,7 +53,7 @@ function Pokémon() {
                         ))}
                     </li>
 
-                    <li>Stats<br />
+                    <li className="statCategory">Stats<br />
                         <ul className='statList'>
                             {pokémon.stats.map((stat) => (
                                 <li className="aspect" key={stat}>
