@@ -22,7 +22,6 @@
     width: 95%;
     margin: 75px auto 0px auto;
     padding-top: 10px;
-    border: solid 1px white;
 }
 
 .media {
@@ -36,7 +35,6 @@
     margin-bottom: 25px;
     filter:
         drop-shadow(2px 0 rgb(255, 255, 255)) drop-shadow(-2px 0 rgb(255, 255, 255)) drop-shadow(0 2px rgb(255, 255, 255)) drop-shadow(0 -2px rgb(255, 255, 255));
-    border: solid 1px white;
 }
 
 .media audio {
@@ -61,11 +59,12 @@
 .info p {
     text-align: left;
     font-size: 40px;
+    line-height: normal;
     font-weight: 600;
     font-family: 'Courier New', Courier, monospace;
     margin: 0px;
     padding: 20px 0px;
-    border-bottom: solid 2.5px white;
+    border-bottom: solid 1px white;
 }
 
 .info ul {
@@ -187,53 +186,66 @@
 
 @media only screen and (max-width: 1200px) {
     .pokémon {
-    }
-
-    .media img {
-    }
-
-    .media audio {
-    }
-
-    .info {
-    }
-
-    .info h1 {
-    }
-
-    .info p {
-    }
-
-    .info ul {
-    }
-
-    .info .statCategory {
-    }
-
-    .aspect {
-    }
-
-    .typeBubble {
-    }
-
-    .info .statList {
-    }
-
-    .info .statList li {
-    }
-}
-
-@media only screen and (max-width: 800px) {
-    .pokémon {
         padding: 0px;
         flex-direction: column;
         align-items: center;
     }
 
     .media img {
+        margin-bottom: 10px;
+    }
+
+    .info {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .info h1 {
+        text-align: center;
+        font-size: 100px;
+        line-height: 100px;
+    }
+
+    .info p {
+        text-align: center;
+        font-size: 30px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        border-bottom: solid 1px white;
+    }
+
+    .info ul {
+        justify-content: space-around;
+    }
+
+    .info .statCategory {
+        font-size: 30px;
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+
+    .aspect {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .typeBubble {
+        font-size: 20px;
+        line-height: 20px;
+        margin: 0px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .info .statList li {
+        margin-bottom: 5px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .media img {
         max-width: 350px;
         max-height: 350px;
-        margin-bottom: 10px;
     }
 
     .media audio {
@@ -242,17 +254,15 @@
 
     .info {
         margin-left: 0px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .info h1 {
-        text-align: center;
         font-size: 50px;
         line-height: 50px;
     }
 
     .info p {
-        text-align: center;
         font-size: 15px;
         padding-top: 5px;
         padding-bottom: 10px;
@@ -260,8 +270,8 @@
     }
 
     .info ul {
-        flex-direction: column;
-        text-align: center;
+        justify-content: space-between;
+        flex-direction: row;
         font-size: 20px;
         margin-top: 20px;
     }
@@ -269,7 +279,7 @@
     .info .statCategory {
         font-size: 20px;
         line-height: 20px;
-        margin-bottom: 20px;
+        margin: 0px;
         padding: 0px;
     }
 
@@ -280,17 +290,17 @@
 
     .typeBubble {
         font-size: 15px;
-        margin: 0px 2.5px;
+        line-height: 15px;
+        margin: 0px;
         margin-top: 10px;
+        margin-right: 2.5px;
     }
 
     .info .statList {
-        margin-top: 10px;
-        display: flex;
-        flex-direction: column;
+        margin-top: 2.5px;
     }
 
     .info .statList li {
-        margin-bottom: 10px;
+        margin: 2.5px;
     }
 }

@@ -16,7 +16,6 @@
     margin: 0px;
     padding: 0px;
     margin-bottom: 70px;
-    border: solid 1px white;
 }
 
 .container a {
@@ -32,7 +31,6 @@
         drop-shadow(-2px 0 rgb(255, 255, 255)) 
         drop-shadow(0 2px rgb(255, 255, 255)) 
         drop-shadow(0 -2px rgb(255, 255, 255));
-    border: solid 1px white;
 }
 
 .text {
