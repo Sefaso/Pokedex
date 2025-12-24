@@ -185,7 +185,43 @@
 
 /* #endregion */
 
-@media only screen and (max-width: 1200px) {}
+@media only screen and (max-width: 1200px) {
+    .pokémon {
+    }
+
+    .media img {
+    }
+
+    .media audio {
+    }
+
+    .info {
+    }
+
+    .info h1 {
+    }
+
+    .info p {
+    }
+
+    .info ul {
+    }
+
+    .info .statCategory {
+    }
+
+    .aspect {
+    }
+
+    .typeBubble {
+    }
+
+    .info .statList {
+    }
+
+    .info .statList li {
+    }
+}
 
 @media only screen and (max-width: 800px) {
     .pokémon {

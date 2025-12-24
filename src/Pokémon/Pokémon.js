@@ -37,6 +37,7 @@ function Pokémon() {
                 <h1>{pokémon.name.toUpperCase()}</h1>
                 <p>{pokémon.description}</p>
                 <ul>
+                    
                     <li className="statCategory">Height<br />
                         <span className="aspect">{`${pokémon.height} m`}</span>
                     </li>

@@ -13,6 +13,7 @@ export default function AppLayout() {
                     {/* REMEMBER THAT IF ASSETS ARE IN THE "PUBLIC DIRECTORY,
                     THEY DON'T NEED THE "." BEFORE THE "/" */}
                 </Link>
+                {/* <SearchBar /> */}
             </nav>
             <div className="main">
                 <Outlet />
