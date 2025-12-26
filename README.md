@@ -39,7 +39,7 @@ http://sefasopokedex.netlify.app/
 
 ## ⚙️ Setup & Installation
 1. Clone the repo:
-   git clone https://github.com/yourusername/pokedex.git
+   git clone https://github.com/sefaso/pokedex.git
    cd pokedex
 
 2. Install dependencies:
