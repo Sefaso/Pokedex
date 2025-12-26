@@ -3,6 +3,9 @@
 A responsive Pokédex web app built with **React** and **Redux**.  
 This project lets users browse Pokémon entries, view their stats, types, cries, and descriptions in a clean, scroll‑snap interface.
 
+## Live version's link:
+http://sefasopokedex.netlify.app/
+
 ---
 
 ## 🚀 Features
@@ -57,10 +60,8 @@ This project lets users browse Pokémon entries, view their stats, types, cries,
 
 ## 🌟 Future Improvements
 - Search bar for Pokémon by name
-- Pagination or lazy loading for performance
-- Dark mode toggle
-- Deployment polish (Netlify live demo link)
-
+- Filters by type and region
+  
 ---
 
 ## 📜 License
