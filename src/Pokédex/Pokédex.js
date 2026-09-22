@@ -38,11 +38,12 @@ function Pokédex() {
 
     // Position saver
     const scrollPosition = useSelector(state => state.pokédex.scrollPosition);
+    const scrollPositionRef = useRef(scrollPosition);
 
     useEffect(() => { // To keep scrolling position on entering and backing out of an entry
         const container = containerRef.current; // Takes current scrolling position
         if (!container) return; // If there's none, cut execution
-        container.scrollTop = scrollPosition; // Restore stored scroll position
+        container.scrollTop = scrollPositionRef.current; // Restore stored scroll position
     }, []); // Dependency array empty for once-an-actual-reload execution
 
     useEffect(() => { // Reset scroll on region change
