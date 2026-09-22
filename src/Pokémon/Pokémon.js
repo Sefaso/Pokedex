@@ -29,6 +29,7 @@ function Pokémon() {
 
     return (
         <div className="pokémon">
+
             <div className="media">
                 <img className='media' src={pokémon.image} alt={pokémon.name} />
                 <audio src={pokémon.cry} autoPlay controls />
@@ -37,7 +38,7 @@ function Pokémon() {
                 <h1>{pokémon.name.toUpperCase()}</h1>
                 <p>{pokémon.description}</p>
                 <ul>
-                    
+
                     <li className="statCategory">Height<br />
                         <span className="aspect">{`${pokémon.height} m`}</span>
                     </li>
@@ -64,8 +65,30 @@ function Pokémon() {
                             ))}
                         </ul>
                     </li>
-
                 </ul>
+
+                {pokémon.alternateForms && pokémon.alternateForms.length > 0 && (
+                    <div className="megaSection">
+                        <h2>Alternate forms</h2>
+                        <div className="megaList">
+                            {pokémon.alternateForms.map((alternate) => (
+                                <div key={alternate.name} className="megaEntry">
+                                    <img src={alternate.image} alt={alternate.name} />
+                                    <audio src={alternate.cry} controls />
+                                    <h3>{alternate.name.toUpperCase().replace(/-/g, ' ')}</h3>
+                                    <div className="megaTypes">
+                                        {alternate.types.map(type => (
+                                            <span key={type} className={`typeBubble ${type}`}>
+                                                {type.toUpperCase()}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
             </div>
         </div>
     );

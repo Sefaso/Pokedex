@@ -1,12 +1,54 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchPokémon } from '../APIHandshake/APIHandshake.js';
+import { fetchPokémon, fetchAlternateForm, fetchPokédex } from '../APIHandshake/APIHandshake.js';
+import { alternateSuffixes } from '../Utilities/AlternateSuffixes.js';
+
+// Alternate forms detector helper
+function isAlternateForm(name) {
+    return alternateSuffixes.test(name);
+}
+
+// Alternate pokemon base from alternate form to establish relation
+function getBaseName(name) {
+    return name.replace(alternateSuffixes, '');
+}
+
+// NEW: Build a map of { baseName: [alternateFormNames...] }
+function buildAlternateMap(allPokemon) {
+    const alternateMap = {};
+    allPokemon.forEach((pokémon) => {
+        if (isAlternateForm(pokémon.name)) { // If it's a alternate pokemon
+            const baseName = getBaseName(pokémon.name); // Extracts base name
+            if (!alternateMap[baseName]) { alternateMap[baseName] = []; } // Space is left blank
+            alternateMap[baseName].push(pokémon.name); // Stores the alternate pokemon
+        }
+    });
+    return alternateMap; // List of alternates is returned
+}
 
 // Thunk for fetching individual pokémon species info
 export const fetchPokémonThunk = createAsyncThunk(
     'pokémon/fetchPokémon',
     async (id) => {
+        // Fetch the requested Pokémon
         const pokémon = await fetchPokémon(id);
-        return pokémon;
+
+        // Fetch all names to detect alternate forms for this Pokémon
+        const allPokemon = await fetchPokédex();
+        const alternateMap = buildAlternateMap(allPokemon);
+
+        // Forcibly looks up by the BASE name (e.g., "giratina", not "giratina-altered")
+        const baseName = getBaseName(pokémon.name);
+
+        // Get alternate form names for this base Pokémon (if any)
+        const alternateFormNames = (alternateMap[baseName] || [])
+            .filter(name => name !== pokémon.name);  // don't duplicate the current form
+
+        // Fetch each alternate form's full data (Not all data needed, just picture and name. Correct later)
+        const alternateForms = await Promise.all(
+            alternateFormNames.map((name) => fetchAlternateForm(name))
+        );
+
+        return { ...pokémon, alternateForms };
     }
 );
 

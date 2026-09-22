@@ -1,5 +1,6 @@
 //This file is for the page's layout
 import { Outlet, Link } from "react-router-dom";
+import Search from '../Search/Search.js';
 import './AppLayout.css';
 
 //This renders nav bar and mutable content
@@ -14,6 +15,7 @@ export default function AppLayout() {
                     THEY DON'T NEED THE "." BEFORE THE "/" */}
                 </Link>
                 {/* <SearchBar /> */}
+                <Search className="searchBar"/>
             </nav>
             <div className="main">
                 <Outlet />

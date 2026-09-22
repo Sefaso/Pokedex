@@ -1,0 +1,100 @@
+.searchContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: 250px;
+    align-items: center;
+}
+
+.searchContainer button {
+    cursor: pointer;
+    width: 55px;
+    height: 40px;
+    border: 0px;
+    padding: 2px 0px 0px 0px;
+    border-radius: 50%;
+    background: hsl(0, 0%, 80%);
+    align-items: center;
+    justify-items: center;
+    transition: all 0.2s;
+}
+
+.searchContainer button:hover {
+    background-color: teal;
+    scale: 1.1;
+}
+
+.searchContainer button:active {
+    background-color: cyan;
+    scale: 1.2;
+}
+
+.magGlass {
+    max-height: 25px;
+    max-width: 25px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 10px;
+    background: hsl(0, 0%, 10%);
+    color: hsl(0, 0%, 90%);
+    border: 3px solid hsl(0, 0%, 10%);
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.searchInput:focus {
+    border: 3px solid cyan;
+}
+
+.searchDropdown {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    background: hsl(0, 0%, 10%);
+    border: 1px solid hsl(0, 0%, 15%);
+    border-radius: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    width: inherit;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.5);
+}
+
+.searchOption {
+    padding: 7px 10px;
+    color: hsl(0, 0%, 85%);
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: all 0.15s;
+    font-weight: 300;
+}
+
+.searchOption:hover {
+    background: teal;
+    color: white;
+    font-weight: 800;
+}
+
+.searchOption:active {
+    background: cyan;
+    color: black;
+}
+
+.searchNoMatch {
+    padding: 7px 10px;
+    color: hsl(0, 0%, 50%);
+    font-size: 14px;
+    font-style: italic;
+    cursor: default;
+}

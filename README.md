@@ -1,67 +1,52 @@
 # Pokédex
 
 A responsive Pokédex web app built with **React** and **Redux**.  
-This project lets users browse Pokémon entries, view their stats, types, cries, and descriptions in a clean, scroll‑snap interface.
+This project lets users browse Pokémon entries form the enitre National Dex, view their stats, types, cries, and descriptions in a clean, scroll‑snap interface.
+
+## Live version's link:
+http://sefasopokedex.netlify.app/
 
 ---
 
-## 🚀 Features
+## Features
 - Browse Pokémon entries with **infinite scroll** and snap‑to‑screen navigation.
 - Individual Pokémon pages with:
   - Image and cry audio
   - Description
   - Height, weight, types (with colored bubbles)
   - Base stats
+  - Alternate forms with their respective cry and types 
 - Responsive design for desktop and mobile.
-- Accessibility fixes and semantic HTML structure.
 
 ---
 
-## 🛠️ Tech Stack
+## Techs used
 - **React** (functional components, hooks)
 - **Redux Toolkit** (state management, async thunks)
 - **React Router** (navigation and layout)
-- **CSS** (flexbox, media queries, scroll‑snap)
 
 ---
 
-## 📂 Project Structure
-- AppLayout.js → Fixed nav bar and layout wrapper
-- Pokédex.js → Scrollable list of Pokémon
-- Pokémon.js → Detailed Pokémon entry
-- PokémonSlice.js → Redux slice for fetching and storing Pokémon data
-- *.css → Component‑specific styles
-
----
-
-## ⚙️ Setup & Installation
+## Setup & Installation
 1. Clone the repo:
-   git clone https://github.com/yourusername/pokedex.git
+   ```bash
+   git clone https://github.com/sefaso/pokedex.git
    cd pokedex
-
-2. Install dependencies:
-   npm install
+   ```
 
 3. Start the development server:
+   ```bash
    npm start
+   ```
 
-4. Open http://localhost:3000 in your browser.
-
----
-
-## 📱 Responsiveness
-- Desktop: large images, wide layout
-- Mobile (<800px): stacked layout, smaller fonts and images
+6. Open http://localhost:3000 in your browser.
 
 ---
 
-## 🌟 Future Improvements
-- Search bar for Pokémon by name
-- Pagination or lazy loading for performance
-- Dark mode toggle
-- Deployment polish (Netlify live demo link)
-
+## Future Improvements
+- Filters by type(s)
+  
 ---
 
-## 📜 License
+## License
 This project is open source. Feel free to fork and adapt it for your own learning.

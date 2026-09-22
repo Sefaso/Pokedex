@@ -1,19 +1,35 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchPokédex } from '../APIHandshake/APIHandshake.js';
+import { fetchPokédex, fetchDefaultFormNames } from '../APIHandshake/APIHandshake.js';
+import { regionalDexes } from '../Utilities/RegionalDexes.js';
 
-//Needed for pokémon id extraction
-function extractIdFromUrl(url) {
-    return url.split("/").filter(Boolean).pop();
-    /*Divides a url using "/" as dividers, filters non-empty strings, 
-    and with .pop returns the last element: The needed number*/
-}
+// Region filter
+export function filterByRegion(pokédex, region) {
+    if (!region) return pokédex; // Default case
+    const regionOrder = regionalDexes[region?.toLowerCase()]; // Gets guided by region
+    if (!regionOrder) return pokédex; // No region order? Return default
+
+    const byName = new Map(pokédex.map(p => [p.name, p])); // Direct lookup
+
+    const baseLookup = new Map();
+    for (const p of pokédex) { // Add default names in order
+        const base = p.name.split('-')[0]; // Get first result of any name containing "-"
+        if (!baseLookup.has(base)) baseLookup.set(base, p); // If ti exists, adds it
+    }
+
+    return regionOrder // Takes the region's hardcoded order
+        .map(name => byName.get(name) ?? baseLookup.get(name)) // MAps with either only name, or valid name
+        .filter(Boolean); // Keep out empty entries (failsafe)
+};
 
 //Thunk for fetching Dex
 export const fetchPokédexThunk = createAsyncThunk(
     'pokédex/fetchPokédex',
-    async ({ offset, limit }) => {
-        const pokédex = await fetchPokédex(offset, limit);
-        return pokédex;
+    async () => {
+        const [list, defaultForms] = await Promise.all([
+            fetchPokédex(),
+            fetchDefaultFormNames(),
+        ]);
+        return { list, defaultForms };
     }
 );
 
@@ -21,22 +37,26 @@ const pokédexSlice = createSlice({
     name: 'pokédex',
     initialState: {
         pokédex: [],
+        defaultForms: [], // For default forms (Exhibition pokedex)
+        activeRegion: null, // For region filtering
         next: 0,
         previous: null,
         status: 'idle',
         error: null,
-        scrollPosition: 0
+        scrollPosition: 0,
     },
 
     reducers: {
-        //This one loads initial feed
-        populatePokédex: (state, action) => {
+        populatePokédex: (state, action) => { // This one loads initial feed
             state.pokédex.push(...action.payload.results);
             state.next = action.payload.next;
         },
-        setScrollPosition: (state, action) => {
+        setActiveRegion: (state, action) => {   // Region setter
+            state.activeRegion = action.payload;
+        },
+        setScrollPosition: (state, action) => { // Scroll stop
             state.scrollPosition = action.payload;
-        }
+        },
     },
 
     //These work off the pokédex retrieval promise and change state accordingly
@@ -51,18 +71,13 @@ const pokédexSlice = createSlice({
             //For success
             .addCase(fetchPokédexThunk.fulfilled, (state, action) => {
                 state.status = 'succeeded';
-                const isInitialLoad = action.meta.arg.offset === 0;
+                const { list, defaultForms } = action.payload; // Retrieves all pokemon for entries and defaults for display
+                state.defaultForms = defaultForms; // Store the default-form list for the selector / filter to use
+                
+                const defaultSet = new Set(defaultForms); // Separate default forms
+                state.pokédex = list.filter(p => defaultSet.has(p.name)); // Send them to state (Don't worry about individual pages, pokemonSlice takes care)
 
-                if (isInitialLoad) {
-                    // First load → replace
-                    state.pokédex = action.payload.results;
-                } else {
-                    // Infinite scroll: Append new pokémon
-                    const existingEntries = new Set(state.pokédex.map((pokémon) => extractIdFromUrl(pokémon.url)));
-                    const newEntries = action.payload.results.filter((pokémon) => !existingEntries.has(extractIdFromUrl(pokémon.url)));
-                    state.pokédex.push(...newEntries);
-                }
-                state.next = action.payload.next;
+                state.next = null;
             })
 
             //For failure
@@ -75,10 +90,12 @@ const pokédexSlice = createSlice({
 
 //These are the exports needed for Feed.js
 export const selectPokédex = (state) => state.pokédex.pokédex;
+export const selectActiveRegion = (state) => state.pokédex.activeRegion;
+export const selectDefaultForms = (state) => state.pokédex.defaultForms;
 export const selectNextOffset = (state) => state.pokédex.next;
 export const selectPokédexStatus = (state) => state.pokédex.status;
 export const selectPokédexError = (state) => state.pokédex.error;
-export const { setScrollPosition } = pokédexSlice.actions;
+export const { setScrollPosition, setActiveRegion } = pokédexSlice.actions;
 
 //And this one for the store
 export default pokédexSlice.reducer;
