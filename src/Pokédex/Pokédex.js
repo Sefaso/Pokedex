@@ -1,6 +1,7 @@
 //#region IMPORTS
 import {
     useEffect,
+    useLayoutEffect,
     useRef,
     useMemo
 } from 'react';
@@ -39,18 +40,36 @@ function Pokédex() {
     // Position saver
     const scrollPosition = useSelector(state => state.pokédex.scrollPosition);
     const scrollPositionRef = useRef(scrollPosition);
+    const isFirstRender = useRef(true);
 
-    useEffect(() => { // To keep scrolling position on entering and backing out of an entry
-        const container = containerRef.current; // Takes current scrolling position
-        if (!container) return; // If there's none, cut execution
-        container.scrollTop = scrollPositionRef.current; // Restore stored scroll position
-    }, []); // Dependency array empty for once-an-actual-reload execution
-
-    useEffect(() => { // Reset scroll on region change
+    // Keep dex position (within region) when coming back out from specie's page
+    useLayoutEffect(() => {
         const container = containerRef.current;
-        if (!container) return; // If there's none, cut execution
-        container.scrollTop = 0; // Reset stored scrolled position to  the top 
-    }, [region]); // Dependency array
+        if (!container) return;
+
+        // First attempt — grid should be committed by now
+        container.scrollTop = scrollPositionRef.current;
+
+        // Second attempt — after the next paint, in case layout shifted
+        const id = requestAnimationFrame(() => {
+            if (containerRef.current) {
+                containerRef.current.scrollTop = scrollPositionRef.current;
+            }
+        });
+
+        return () => cancelAnimationFrame(id);
+    }, []);
+
+    // Reset scroll on real region changes (skip initial mount)
+    useEffect(() => {
+        if (isFirstRender.current) {
+            isFirstRender.current = false;
+            return;
+        }
+        const container = containerRef.current;
+        if (!container) return;
+        container.scrollTop = 0;
+    }, [region]);
 
     //Non-successful state handlers
     if (status === 'loading' && pokédex.length === 0) { //This one checks if the feed length is 0, and if not, adds without replacing

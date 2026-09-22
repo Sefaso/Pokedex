@@ -47,7 +47,7 @@ function Pokémon() {
                         <span className="aspect">{`${pokémon.weight} Kgs`}</span>
                     </li>
 
-                    <li className="statCategory">Types<br />
+                    <li className="statCategory types">Types<br />
                         {pokémon.types.map(type => (
                             <span key={type} className={`typeBubble ${type}`}>
                                 {type.toUpperCase()}

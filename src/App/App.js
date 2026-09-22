@@ -14,7 +14,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         {/* Redirect root to '.../pkdx/national' in case of no specifics*/}
-        <Route path="/" element={<Navigate to="/pokédex" replace />} />
+        <Route path="/" element={<Navigate to="/pokédex" />} />
         {/* URL behaviors */}
         <Route path="/" element={<AppLayout />}>
           <Route path="pokédex" element={<Pokédex />} />

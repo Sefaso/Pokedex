@@ -334,13 +334,14 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
     .media img {
         max-width: 400px;
         max-height: 400px;
     }
 
     .info {
+        width: 90%;
         margin-left: 0px;
         margin-top: 10px;
     }
@@ -367,33 +368,46 @@
     .info .statCategory {
         font-size: 20px;
         line-height: 20px;
-        text-align: center;
+        text-align: left;
         margin: 0px;
         margin-bottom: 15px;
         padding: 0px;
     }
 
     .aspect {
-        font-size: 15px;
+        font-size: 14px;
         line-height: 15px;
     }
 
     .typeBubble {
-        font-size: 15px;
+        width: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 14px;
         line-height: 15px;
-        margin: 10px 2.5px;
+        margin: 5px 0px;
     }
 
     .info .statList {
-        margin-top: 2.5px;
+        margin-top: 5px;
     }
 
     .info .statList li {
-        margin: 2.5px;
+        font-size: 14px;
+        margin: 2.5px 0px;
+    }
+
+    .megaSection {
+        max-width: 100%;
+        padding: 10px 0px 10px 0px;
     }
 
     .megaSection h2 {
         font-size: 30px;
+    }
+
+    .megaEntry {
+        max-width: 75%;
     }
 
     .megaEntry h3 {
