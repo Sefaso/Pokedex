@@ -335,15 +335,20 @@
 }
 
 @media only screen and (max-width: 600px) {
+    .media {
+        padding: 0px;
+    }
+
     .media img {
-        max-width: 400px;
-        max-height: 400px;
+        margin: 0px auto;
+        padding: 0px auto;
+        max-width: 350px;
+        max-height: 350px;
     }
 
     .info {
-        width: 90%;
-        margin-left: 0px;
-        margin-top: 10px;
+        width: 95%;
+        margin-top: 25px;
     }
 
     .info h1 {
@@ -352,9 +357,7 @@
     }
 
     .info p {
-        font-size: 15px;
-        padding-top: 5px;
-        padding-bottom: 10px;
+        font-size: 14px;
         border-bottom: solid 1px white;
     }
 
@@ -366,17 +369,16 @@
     }
 
     .info .statCategory {
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 18px;
+        line-height: 24px;
         text-align: left;
         margin: 0px;
-        margin-bottom: 15px;
         padding: 0px;
     }
 
     .aspect {
         font-size: 14px;
-        line-height: 15px;
+        line-height: 16px;
     }
 
     .typeBubble {
@@ -385,7 +387,7 @@
         flex-wrap: wrap;
         font-size: 14px;
         line-height: 15px;
-        margin: 5px 0px;
+        gap: 5px;
     }
 
     .info .statList {
@@ -414,4 +416,10 @@
         font-size: 35px;
     }
 
+    .megaEntry img {
+        margin: 0px auto;
+        padding: 0px auto;
+        max-width: 250px;
+        max-height: 250px;
+    }
 }
