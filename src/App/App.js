@@ -13,15 +13,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Redirect root to '.../pkdx/national' in case of no specifics*/}
-        <Route path="/" element={<Navigate to="/pokédex" />} />
-        {/* URL behaviors */}
         <Route path="/" element={<AppLayout />}>
-          <Route path="pokédex" element={<Pokédex />} />
-          <Route path="type/:type" element={<Pokédex />} />
+          {/* Redirect root to national dex (default) in case of no specifics*/}
+          <Route index element={<Navigate to="/pokedex" />} />
+          {/* URL behaviors */}
+          <Route path="pokedex" element={<Pokédex />} />
           <Route path="species/:species" element={<Pokémon />} />
         </Route>
-
       </Routes>
     </BrowserRouter>
   )
