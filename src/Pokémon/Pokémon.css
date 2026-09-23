@@ -76,9 +76,8 @@
     display: flex;
     flex-direction: row;
     list-style: none;
-    margin: 0px;
+    margin: 20px 0px 0px 0px;
     padding: 0px;
-    margin-top: 20px;
     justify-content: space-between;
 }
 
@@ -90,19 +89,17 @@
 .aspect {
     font-size: 30px;
     line-height: 30px;
-    margin-bottom: 5px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
 }
 
 .typeBubble {
+    width: fit-content;
     display: inline-block;
     font-size: 30px;
-    line-height: normal;
     padding: 5px;
     border-radius: 5px;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin: 10px 5px 0px 0px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 700;
 }
@@ -114,7 +111,6 @@
     padding: 0px;
 }
 
-/*Place new styles here*/
 .megaSection {
     width: fit-content;
     margin: 15px auto;
@@ -310,15 +306,13 @@
 
     .aspect {
         font-size: 20px;
-        line-height: 20px;
+        line-height: 16px;
     }
 
     .typeBubble {
         font-size: 20px;
         line-height: 20px;
-        margin: 0px;
-        margin-right: 10px;
-        margin-top: 10px;
+        margin: 10px 5px 0px 0px;
     }
 
     .info .statList li {
@@ -335,10 +329,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .media {
-        align-items: center;
-    }
-
     .media img {
         margin: 0px auto 20px auto;
         max-width: 350px;
@@ -347,12 +337,12 @@
 
     .info {
         width: 95%;
-        margin-top: 25px;
+        margin-top: 20px;
     }
 
     .info h1 {
         font-size: 50px;
-        line-height: 50px;
+        line-height: 40px;
     }
 
     .info p {
@@ -362,8 +352,7 @@
     .info ul {
         flex-direction: row;
         align-items: top;
-        font-size: 20px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .info .statCategory {
@@ -376,16 +365,17 @@
 
     .aspect {
         font-size: 12px;
-        line-height: 10px;
+        line-height: 12px;
     }
 
     .typeBubble {
         width: fit-content;
         display: flex;
         flex-wrap: wrap;
+        padding: 5px;
         font-size: 14px;
-        line-height: 15px;
-        gap: 5px;
+        line-height: 10px;
+        margin: 5px 0px;
     }
 
     .info .statList {
@@ -394,7 +384,7 @@
 
     .info .statList li {
         font-size: 12px;
-        margin: 2.5px 0px;
+        margin: 0px;
     }
 
     .megaSection {
