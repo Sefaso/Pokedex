@@ -1,4 +1,4 @@
-# Pokédex (Codecademy FrontEnd project
+# Pokédex (Codecademy FrontEnd project)
 
 A responsive Pokédex web app built with **React** and **Redux**.  
 This project lets users browse Pokémon entries form the enitre National Dex, view their stats, types, cries, and descriptions in a clean, scroll‑snap interface.
